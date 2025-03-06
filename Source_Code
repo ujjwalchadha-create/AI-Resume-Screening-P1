@@ -1,71 +1,92 @@
-# AI-Powered Resume Screening and Ranking System
+!pip install PyPDF2
+!pip install python-docx
 
-## 📌 Project Overview
-This project is an **AI-powered Resume Screening and Ranking System** that automates resume evaluation using **Natural Language Processing (NLP)** and **Machine Learning (ML)**. The system extracts resume data, ranks candidates based on relevance, and categorizes resumes into job roles, optimizing recruitment efficiency.
+# ✅ Import necessary libraries
+from google.colab import files
+import PyPDF2, docx, pandas as pd, numpy as np, re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.model_selection import train_test_split
 
-## 📥 Installation & Setup
-### **1️⃣ Prerequisites**
-Ensure you have the following installed:
-- **Python 3.x**
-- **pip (Python package manager)**
-- **Git (optional for version control)**
+# ✅ Function to extract text
+def extract_text(file_path):
+    try:
+        if file_path.lower().endswith(".pdf"):
+            with open(file_path, "rb") as file:
+                return "\n".join([page.extract_text() or "" for page in PyPDF2.PdfReader(file).pages]).strip()
+        elif file_path.lower().endswith(".docx"):
+            return "\n".join([para.text for para in docx.Document(file_path).paragraphs]).strip()
+        with open(file_path, "r", encoding="utf-8") as f:
+            return f.read().strip()
+    except Exception:
+        return ""
 
-### **2️⃣ Clone the Repository**
-```bash
- git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
- cd YOUR_REPO
-```
+# ✅ Function to clean text
+clean_text = lambda text: re.sub(r'[^\w\s]', ' ', text.lower().strip()) if isinstance(text, str) else ""
 
-### **3️⃣ Install Required Dependencies**
-```bash
- pip install -r requirements.txt
-```
+# ✅ Upload Job Description
+jd_text = clean_text(extract_text(f"/content/{list(files.upload().keys())[0]}"))
 
-## 🏗 Project Structure
-```
-AI-Resume-Screening-P1/
-│── assets/                 # Project images, snapshots
-│── data/                   # Sample resumes dataset
-│── models/                 # Pre-trained models (if applicable)
-│── src/                    # Source code
-│   │── main.py             # Main script for running the project
-│   │── resume_parser.py    # Resume text extraction logic
-│   │── ranking.py          # Resume ranking model (TF-IDF & Cosine Similarity)
-│   │── classifier.py       # Resume classification (KNN model)
-│   │── utils.py            # Helper functions
-│── requirements.txt        # Python dependencies
-│── README.md               # Project documentation
-```
+# ✅ Upload & Clean Resumes
+resume_files = files.upload()
+cleaned_resumes = {file: clean_text(extract_text(f"/content/{file}")) for file in resume_files}
 
-## 🚀 Running the Project
-To start the AI-powered Resume Screening System:
-```bash
- python src/main.py
-```
+# ✅ Load & Process Training Data
+data = pd.read_csv("/content/UpdatedResumeDataSet.csv", encoding="utf-8").dropna()
+data['cleaned_resume'] = data['Resume'].apply(clean_text)
 
-## 🔹 Usage Guide
-1. Upload resumes in **PDF or DOCX** format.
-2. The system extracts key skills and experience from each resume.
-3. Candidates are ranked based on **cosine similarity scores**.
-4. The **KNN classifier** categorizes resumes into relevant job roles.
-5. The results are displayed in a **ranked list & heatmap visualization**.
+# ✅ TF-IDF Vectorization
+vectorizer = TfidfVectorizer(stop_words="english", max_features=4000)
+X, y = vectorizer.fit_transform(data['cleaned_resume']), data['Category']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-## 📌 Dependencies
-This project uses:
-- **Python 3.x**
-- **NLTK / spaCy** (Natural Language Processing)
-- **Scikit-learn** (Machine Learning models)
-- **PyPDF2 / python-docx** (Text extraction)
-- **Matplotlib & Seaborn** (Visualization)
+# ✅ Train Optimized KNN Model
+knn = KNeighborsClassifier(n_neighbors=min(5, len(y_train)))
+knn.fit(X_train, y_train)
 
-To install missing dependencies:
-```bash
-pip install nltk scikit-learn matplotlib seaborn pypdf2 python-docx
-```
+# ✅ Process Resumes & Compute Similarity
+resume_tfidf, jd_tfidf = vectorizer.transform(cleaned_resumes.values()), vectorizer.transform([jd_text])
+similarity_scores = cosine_similarity(resume_tfidf, jd_tfidf).flatten()
 
-## 📝 Additional Notes
-- The model can be improved using **deep learning techniques (BERT, GPT models)**.
-- Integration with **Applicant Tracking Systems (ATS)** can enhance recruitment workflows.
-- For advanced skill extraction, **Named Entity Recognition (NER)** can be used.
+# ✅ Rank & Predict Categories
+ranked_resumes = sorted(zip(resume_files.keys(), similarity_scores), key=lambda x: x[1], reverse=True)
+predicted_labels = knn.predict(resume_tfidf)
 
-For further improvements or modifications, feel free to contribute! 🚀
+# ✅ Display Results
+print("\n🔹 **Optimized Resume Ranking**\n")
+for rank, (file, score) in enumerate(ranked_resumes, 1):
+    print(f"{rank}. {file} - Similarity Score: {score:.4f} - Predicted Category: {predicted_labels[rank-1]}")
+
+print(f"\n✅ Model Accuracy: {knn.score(X_test, y_test) * 100:.2f}%")
+print("\n✅ **Resume Screening & Ranking Completed!**")
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Extract filenames, similarity scores, and categories for visualization
+resume_names = [file for file, _ in ranked_resumes]
+similarity_scores = [score for _, score in ranked_resumes]
+
+# ✅ Bar Chart: Resume Similarity Scores with Job Description
+plt.figure(figsize=(5, 3))
+sns.barplot(x=[score for _, score in ranked_resumes],
+            y=[file for file, _ in ranked_resumes],
+            palette="viridis")  # ✅ Changed color palette to "viridis"
+plt.xlabel("Similarity Score")
+plt.ylabel("Resumes")
+plt.title("Resume Similarity Scores with Job Description")
+plt.xlim(0, 1)  # Ensuring the x-axis stays within 0 to 1 range
+plt.grid(axis="x", linestyle="--", alpha=0.7)
+plt.show()
+
+# ✅ Heatmap: Resume Similarity Scores vs Job Description
+plt.figure(figsize=(6, 4))
+sns.heatmap(
+    [[score] for score in similarity_scores], annot=True, cmap="coolwarm", fmt=".4f",
+    xticklabels=["Job Description"], yticklabels=resume_names
+)
+plt.title("Heatmap of Resume Similarity Scores with JD")
+plt.ylabel("Resumes")
+plt.show()
+
