@@ -53,11 +53,6 @@ If you face any issues, refer to the **demo video** for step-by-step guidance on
 
 ---
 
-## ✅ Final Checklist
-✔ Ensure the dataset is downloaded correctly.  
-✔ Choose between **direct upload** or **Google Drive mounting**.  
-✔ Verify successful dataset loading in Colab using `df.head()`.
-
 For any queries, refer to the demo video or contact the project maintainer.
 
 🚀 *Now you're ready to proceed with the project!*
