@@ -1,0 +1,62 @@
+About the job
+Job Description: Intern (Data Science)
+
+Duration: 6 months
+
+GRS Asia Retail Market – Non-Price Predictive Modeling team
+
+Location: India
+
+
+
+Team Overview
+
+Asia Retail Market – Non-Price Predictive Modeling team is responsible for developing a wide variety of predictive models and analytical tools that will enable the East Region to achieve their profitability and growth goals. We develop predictive models for claims, distribution, customer service etc. As an innovative and forward-thinking team, we are seeking a Data Analyst Intern to join our team and contribute to the enhancement of our data analysis and model monitoring capabilities.
+
+
+
+Position Overview
+
+As a Data Analyst Intern, you will have the exciting opportunity to develop your skills and gain practical experience in data analysis. Your primary focus will be on developing Power BI dashboards, sourcing and fetching data from data bases using queries, and conducting ad hoc analyses to extract actionable insights. This role offers a unique chance to work with a dynamic team of professionals in an international setup and directly impact our data driven decision-making processes.
+
+
+
+Key Responsibilities
+
+1. Power BI Dashboard Development
+
+- Collaborate with team members and stakeholders to understand the requirements.
+
+- Design and create Power BI dashboards that effectively communicate key performance indicators (KPIs) and trends.
+
+- Ensure dashboards are user-friendly, interactive, and visually appealing.
+
+2. Data Sourcing and Querying
+
+- Extract data from various sources including data based and external APIs.
+
+- Write SQL queries to fetch, filter, and transform raw data into usable formats.
+
+- Validate and clean data to maintain data accuracy and integrity.
+
+3. Ad Hoc Data Analysis
+
+- Work closely with team members and stakeholders to identify analysis objectives and requirements.
+
+- Perform exploratory data analysis to uncover insights and patterns.
+
+- Utilize statistical and analytical techniques to generate actionable recommendations.
+
+Qualifications:
+
+- Current enrollment in a relevant degree program (e.g., Computer Science, Data Science, Business Analytics, Statistics, etc.).
+
+- Strong proficiency in data visualizations tools, especially Power BI.
+
+- Basic understanding of SQL and relational data bases.
+
+- Analytical mindset with the ability to dissect complex problems and provide insightful solutions.
+
+- Excellent communication skills, both verbal and written.
+
+- Ability to work independently and collaborate within a team environment.
