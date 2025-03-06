@@ -1,1 +1,72 @@
+# AI-Powered Resume Screening and Ranking System
+
+## 📌 Project Overview
+This project is an **AI-powered Resume Screening and Ranking System** that automates resume evaluation using **Natural Language Processing (NLP)** and **Machine Learning (ML)**. The system extracts resume data, ranks candidates based on relevance, and categorizes resumes into job roles, optimizing recruitment efficiency.
+
+## 📥 Installation & Setup
+### **1️⃣ Prerequisites**
+Ensure you have the following installed:
+- **Python 3.x**
+- **pip (Python package manager)**
+- **Git (optional for version control)**
+
+### **2️⃣ Clone the Repository**
+```bash
+ git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+ cd YOUR_REPO
+```
+
+### **3️⃣ Install Required Dependencies**
+```bash
+ pip install -r requirements.txt
+```
+
+## 🏗 Project Structure
+```
+AI-Resume-Screening-P1/
+│── assets/                 # Project images, snapshots
+│── data/                   # Sample resumes dataset
+│── models/                 # Pre-trained models (if applicable)
+│── src/                    # Source code
+│   │── main.py             # Main script for running the project
+│   │── resume_parser.py    # Resume text extraction logic
+│   │── ranking.py          # Resume ranking model (TF-IDF & Cosine Similarity)
+│   │── classifier.py       # Resume classification (KNN model)
+│   │── utils.py            # Helper functions
+│── requirements.txt        # Python dependencies
+│── README.md               # Project documentation
+```
+
+## 🚀 Running the Project
+To start the AI-powered Resume Screening System:
+```bash
+ python src/main.py
+```
+
+## 🔹 Usage Guide
+1. Upload resumes in **PDF or DOCX** format.
+2. The system extracts key skills and experience from each resume.
+3. Candidates are ranked based on **cosine similarity scores**.
+4. The **KNN classifier** categorizes resumes into relevant job roles.
+5. The results are displayed in a **ranked list & heatmap visualization**.
+
+## 📌 Dependencies
+This project uses:
+- **Python 3.x**
+- **NLTK / spaCy** (Natural Language Processing)
+- **Scikit-learn** (Machine Learning models)
+- **PyPDF2 / python-docx** (Text extraction)
+- **Matplotlib & Seaborn** (Visualization)
+
+To install missing dependencies:
+```bash
+pip install nltk scikit-learn matplotlib seaborn pypdf2 python-docx
+```
+
+## 📝 Additional Notes
+- The model can be improved using **deep learning techniques (BERT, GPT models)**.
+- Integration with **Applicant Tracking Systems (ATS)** can enhance recruitment workflows.
+- For advanced skill extraction, **Named Entity Recognition (NER)** can be used.
+
+For further improvements or modifications, feel free to contribute! 🚀
 
