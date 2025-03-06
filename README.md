@@ -51,7 +51,7 @@ This project ranks resumes based on **TF-IDF vectorization and cosine similarity
 ---
 
 ## 📂 Source Code & Instruction Manual
-🔹 **[View the Source Code](#)** *(Link to be added once uploaded)*  
+🔹 **[View the Source Code](#)** *(https://colab.research.google.com/drive/1Jrlk3iAkQE6oPt2T09u8rxkGlUJBrqgQ?usp=sharing)*  
 🔹 **[Instruction Manual](#)** *(To be added later)*
 
 ---
