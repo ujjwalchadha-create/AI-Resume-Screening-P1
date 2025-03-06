@@ -1,0 +1,63 @@
+# 📂 Dataset Upload Instructions
+
+## 📌 Overview
+This document provides a step-by-step guide on how to **download and upload the dataset** for use in the **Google Colab environment**. The dataset is crucial for running the AI-powered Resume Screening and Ranking System, as demonstrated in the demo video.
+
+---
+
+## 🔹 Step 1: Download the Dataset
+1. **Go to the dataset source** (provided in the repository or as per the demo video instructions).
+2. Click on the **download** button to get the dataset file (**e.g., CSV, JSON, or ZIP format**).
+3. Save the dataset to your local machine in a known directory.
+
+---
+
+## 🔹 Step 2: Upload the Dataset to Google Colab
+To use the dataset in **Google Colab**, follow these steps:
+
+### **📌 Method 1: Upload Directly in Google Colab**
+1. Open **Google Colab** in your browser.
+2. Click on the **Files icon** 📁 (left sidebar).
+3. Click the **Upload** button and select the downloaded dataset file.
+4. Once uploaded, use the following code in a Colab cell to verify:
+   ```python
+   import pandas as pd
+   df = pd.read_csv("your_dataset.csv")  # Change filename if needed
+   df.head()
+   ```
+
+---
+
+### **📌 Method 2: Mount Google Drive (Recommended for Large Files)**
+If your dataset is large, it’s better to store it in **Google Drive** and access it in Colab.
+
+#### **Steps to Mount Drive:**
+1. **Upload the dataset** to your Google Drive.
+2. In Google Colab, run the following command:
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+3. Locate the file path and read the dataset:
+   ```python
+   df = pd.read_csv("/content/drive/My Drive/path_to_your_dataset.csv")
+   df.head()
+   ```
+
+---
+
+## 🎥 Refer to the Demo Video
+If you face any issues, refer to the **demo video** for step-by-step guidance on dataset handling.
+
+🔗 **Demo Video Link:** *[Add your video link here]*
+
+---
+
+## ✅ Final Checklist
+✔ Ensure the dataset is downloaded correctly.  
+✔ Choose between **direct upload** or **Google Drive mounting**.  
+✔ Verify successful dataset loading in Colab using `df.head()`.
+
+For any queries, refer to the demo video or contact the project maintainer.
+
+🚀 *Now you're ready to proceed with the project!*
