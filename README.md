@@ -52,6 +52,7 @@ This project ranks resumes based on **TF-IDF vectorization and cosine similarity
 
 ## 📂 Source Code & Instruction Manual
 🔹 **[View the Source Code](#)** *(https://colab.research.google.com/drive/1Jrlk3iAkQE6oPt2T09u8rxkGlUJBrqgQ?usp=sharing)*  
+
 🔹 **[Instruction Manual](#)** *(https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/c4777ed27688e4721ed30f6ae0815f57196bb42d/Instructions_manual)*
 
 ---
