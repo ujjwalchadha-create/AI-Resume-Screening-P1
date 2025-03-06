@@ -51,14 +51,6 @@ This project ranks resumes based on **TF-IDF vectorization and cosine similarity
   <img src="https://img.shields.io/badge/🎥%20Watch%20Demo%20Video-Google%20Drive-red?style=for-the-badge&logo=google-drive" alt="Demo Video">
 </a>
 <br><br>
-
-<a href="https://colab.research.google.com/drive/1Jrlk3iAkQE6oPt2T09u8rxkGlUJBrqgQ?usp=sharing" target="_blank">
-  <img src="https://img.shields.io/badge/🔹%20View%20the%20Source%20Code%20-Colab-blue?style=for-the-badge&logo=googlecolab" alt="View Source Code">
-</a>
-<br><br>
-
-<a href="https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/c4777ed27688e4721ed30f6ae0815f57196bb42d/Instructions_manual" target="_blank">
-  <img src="https://img.shields.io/badge/🔹%20Instruction%20Manual-GitHub-darkgreen?style=for-the-badge&logo=github" alt="Instruction Manual">
 </a>
 
 ---
