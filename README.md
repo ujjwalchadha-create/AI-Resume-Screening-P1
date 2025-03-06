@@ -49,7 +49,7 @@ This project ranks resumes based on **TF-IDF vectorization and cosine similarity
 💡 *Stay tuned for updates and improvements, including deep learning integration and bias reduction mechanisms!*
 
 ### 📧 **For queries, reach out to:**  
-📌 **Ujjwal Chadha** – [Gmail](ujjwalchadha2003@gmail.com) | [GitHub](https://github.com/ujjwalchadha-create) or 
+📌 **Ujjwal Chadha** – (ujjwalchadha2003@gmail.com) | [GitHub](https://github.com/ujjwalchadha-create)
 
 ---
 ✨ *AI-powered recruitment is the future! This project helps organizations streamline hiring efficiently and fairly.*
