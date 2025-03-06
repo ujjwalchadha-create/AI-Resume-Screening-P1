@@ -31,16 +31,16 @@ This project ranks resumes based on **TF-IDF vectorization and cosine similarity
 ## 📸 Project Snapshots  
 
 ### 1️⃣ Resume Upload  
-![Resume Upload](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/d238424842c4358b683325f2dd6be6a85a8bd387/Resume%20uploading.png)
+![Resume Upload](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/2c6e8e27b4f1b921795858ee21319cd6a9d7405b/assets-images/Resume%20uploading.png)
 
 ### 2️⃣ Resume Ranking Results  
-![Ranking Results](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/d238424842c4358b683325f2dd6be6a85a8bd387/Resume%20Ranking.png)
+![Ranking Results](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/2c6e8e27b4f1b921795858ee21319cd6a9d7405b/assets-images/Resume%20Ranking.png)
 
 ### 3️⃣ Bar Plot for Resume Scores  
-![BarPLot](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/75aa6ea0aa6c932eba3796bef39370543ccfb66b/Barplot%20of%20Scores.png)
+![BarPLot](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/2c6e8e27b4f1b921795858ee21319cd6a9d7405b/assets-images/Barplot%20of%20Scores.png)
 
 ### 3️⃣ Resume Similarity Heatmap  
-![Heatmap](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/d238424842c4358b683325f2dd6be6a85a8bd387/Heat%20Map%20for%20Resume%20Similarities.png)
+![Heatmap](https://github.com/ujjwalchadha-create/AI-Resume-Screening-P1/blob/2c6e8e27b4f1b921795858ee21319cd6a9d7405b/assets-images/Heat%20Map%20for%20Resume%20Similarities.png)
 
 
 ---
