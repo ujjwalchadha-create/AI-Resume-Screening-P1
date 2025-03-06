@@ -28,10 +28,20 @@ This project ranks resumes based on **TF-IDF vectorization and cosine similarity
 
 ---
 
-## 📸 Project Snapshots
-👉 **Upload snapshots of your working project here**
+## 📸 Project Snapshots  
 
-*(To add images, use: ![Alt text](image-url))*
+### 1️⃣ Resume Upload  
+![Resume Upload](Resume uploading.png)
+
+### 2️⃣ Resume Ranking Results  
+![Ranking Results](Resume Ranking.png)
+
+### 3️⃣ Bar Plot for Resume Scores  
+![BarPLot](Barplot of Scores.png)
+
+### 3️⃣ Resume Similarity Heatmap  
+![Heatmap](Heat Map for Resume Similarities.png)
+
 
 ---
 
