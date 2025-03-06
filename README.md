@@ -46,7 +46,7 @@ This project ranks resumes based on **TF-IDF vectorization and cosine similarity
 ---
 
 ## 🎥 Demo Video
-**Google Drive Link:** *[Add your demo video link here]*
+**Google Drive Link:** (https://drive.google.com/file/d/1rri9oBVIr4Hro4KnCvQhz9NDyXWCiGtf/view?usp=drive_link)
 
 ---
 
